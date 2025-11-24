@@ -1,0 +1,12 @@
+torch==999999999
+torchvision==999999999
+torchaudio==999999999
+xformers==999999999
+numpy==999999999
+scipy==999999999
+opencv-python==999999999
+opencv-python-headless==999999999
+transformers==999999999
+diffusers==999999999
+accelerate==999999999
+protobuf==999999999
