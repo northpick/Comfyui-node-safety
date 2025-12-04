@@ -9,4 +9,12 @@ opencv-python-headless==999999999
 transformers==999999999
 diffusers==999999999
 accelerate==999999999
-protobuf==999999999
+
+# 柔性锁：只防降级，不锁死
+protobuf>=4.25.0
+opencv-contrib-python>=4.9.0
+colour-science>=0.4.0
+google-generativeai; python_version >= "3.9"
+insightface>=0.7.3
+onnxruntime-gpu>=1.18.0
+mediapipe>=0.10.0
