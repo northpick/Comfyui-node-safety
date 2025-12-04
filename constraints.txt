@@ -1,20 +1,45 @@
-torch==999999999
-torchvision==999999999
-torchaudio==999999999
-xformers==999999999
-numpy==999999999
-scipy==999999999
-opencv-python==999999999
-opencv-python-headless==999999999
-transformers==999999999
-diffusers==999999999
-accelerate==999999999
+# ====================== 2025.12 最稳防降级约束文件 ======================
+# 核心：只防降级，不锁死，允许今后继续升级到更高版本
+# 只要包的版本 >= 下面的数字就行，不会强制降级，也不会再出现 999999999 那种假版本炸环境的情况
 
-# 柔性锁：只防降级，不锁死
-protobuf>=4.25.0
-opencv-contrib-python>=4.9.0
-colour-science>=0.4.0
-google-generativeai; python_version >= "3.9"
+# PyTorch 生态（目前最高 2.9.1，允许以后出 2.10、3.0 继续升级）
+torch>=2.9.1
+torchvision>=0.24.1
+torchaudio>=2.9.1
+xformers>=0.0.33
+triton-windows>=3.3.0
+
+# 基础科学计算（numpy 2.x 是大版本，防止某些老节点强制拉回 1.x）
+numpy>=2.3.0,<3.0.0
+
+# OpenCV（目前最高 4.12，防止某些节点乱拉老版本）
+opencv-python>=4.10.0
+opencv-python-headless>=4.10.0
+opencv-contrib-python>=4.10.0
+
+# HuggingFace 核心库（保持最新）
+transformers>=4.45.0
+diffusers>=0.30.0
+accelerate>=0.33.0
+safetensors>=0.4.0
+huggingface-hub>=0.25.0
+
+# 常见自定义节点必备（防止被意外降级）
+protobuf>=4.25.0,<=5.30.0
 insightface>=0.7.3
 onnxruntime-gpu>=1.18.0
-mediapipe>=0.10.0
+mediapipe>=0.10.14
+colour-science>=0.4.4
+rembg>=2.0.50
+facexlib>=0.3.0
+gfpgan>=1.3.8
+
+#  # 可选：如果你经常用 Google Gemini 节点
+google-generativeai>=0.8.0
+
+# 其他容易出问题的
+scipy>=1.13.0
+scikit-image>=0.24.0
+kornia>=0.7.3
+einops>=0.8.0
+pytorch-lightning>=2.2.0
